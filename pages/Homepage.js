@@ -81,6 +81,7 @@ const Homepage = () => {
     </>
   );
 };
+
 const styles = StyleSheet.create({
   container7: {
     flex: 1,
@@ -90,6 +91,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 20,
     fontWeight: "bold",
+    marginLeft: 40,
   },
   titleText2: {
     fontSize: 10,
@@ -100,6 +102,7 @@ const styles = StyleSheet.create({
   Text1: {
     fontSize: 15,
     fontWeight: "bold",
+    marginLeft: 50,
   },
   container1: {
     marginTop: 30,
@@ -129,6 +132,10 @@ const styles = StyleSheet.create({
     width: 400,
     height: 200,
     resizeMode: "stretch",
+    marginLeft: 60,
+    padding: 24,
+    margin: 10,
+    marginBottom: -260,
   },
 });
 
