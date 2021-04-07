@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import HomeScreen from "./HomeScreen";
 import CompeletedTask from "./CompeletedTask";
 import UnCompeletedTask from "./UnCompeletedTask";
+import Contact from "./Contact";
+
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import { createStackNavigator } from "@react-navigation/stack";
@@ -15,6 +17,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const HomeStack = createStackNavigator();
 const CompeletedTaskStack = createStackNavigator();
+const ContactStack = createStackNavigator();
 
 export const HomeStackScreen = ({ navigation }) => {
   return (
@@ -82,6 +85,29 @@ export const CompeletedTaskStackScreen = ({ navigation }) => {
         }}
       />
     </CompeletedTaskStack.Navigator>
+  );
+};
+
+export const ContactStackScreen = ({ navigation }) => {
+  return (
+    <ContactStack.Navigator>
+      <ContactStack.Screen
+        name="Contact"
+        component={Contact}
+        options={{
+          headerLeft: () => (
+            <Ionicons.Button
+              name="ios-menu"
+              size={35}
+              backgroundColor="#fff"
+              onPress={() => navigation.openDrawer()}
+              title="Info"
+              color="#000"
+            />
+          ),
+        }}
+      />
+    </ContactStack.Navigator>
   );
 };
 

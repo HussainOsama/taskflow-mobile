@@ -16,10 +16,7 @@ const Drawer = createDrawerNavigator();
 
 import { DrawerContent } from "./components/DrawerContent";
 
-import {
-  HomeStackScreen,
-  CompeletedTaskStackScreen,
-} from "./screens/MainTapScreen";
+import { ContactStackScreen } from "./screens/MainTapScreen";
 
 import MainTapScreen from "./screens/MainTapScreen";
 
@@ -33,7 +30,8 @@ export default function App() {
         drawerContent={(props) => <DrawerContent {...props} />}
       >
         <Drawer.Screen name="Home" component={MainTapScreen} />
-        <Drawer.Screen name="CompeletedTask" component={MainTapScreen} />
+        <Drawer.Screen name="Contact" component={ContactStackScreen} />
+        {/* <Drawer.Screen name="Contact" component={MainTapScreen} /> */}
       </Drawer.Navigator>
     </NavigationContainer>
   );

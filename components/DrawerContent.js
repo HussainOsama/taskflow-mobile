@@ -39,21 +39,6 @@ export function DrawerContent(props) {
                 <Caption style={styles.caption}>Dept: IT</Caption>
               </View>
             </View>
-
-            {/* <View style={styles.row}>
-              <View style={styles.section}>
-                <Paragraph style={[styles.paragraph, styles.caption]}>
-                  80
-                </Paragraph>
-                <Caption style={styles.caption}>Following</Caption>
-              </View>
-              <View style={styles.section}>
-                <Paragraph style={[styles.paragraph, styles.caption]}>
-                  100
-                </Paragraph>
-                <Caption style={styles.caption}>Followers</Caption>
-              </View>
-            </View> */}
           </View>
 
           <Drawer.Section style={styles.drawerSection}>
@@ -63,19 +48,19 @@ export function DrawerContent(props) {
               )}
               label="Home"
               onPress={() => {
-                props.navigation.navigate("Home");
+                props.navigation.navigate("HomeStackScreen");
               }}
             />
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="account-outline" color={color} size={size} />
+                <Icon name="message" color={color} size={size} />
               )}
-              label="Profile"
+              label="Contact Supervisor"
               onPress={() => {
-                props.navigation.navigate("Profile");
+                props.navigation.navigate("Contact");
               }}
             />
-            <DrawerItem
+            {/* <DrawerItem
               icon={({ color, size }) => (
                 <Icon name="bookmark-outline" color={color} size={size} />
               )}
@@ -83,39 +68,7 @@ export function DrawerContent(props) {
               onPress={() => {
                 props.navigation.navigate("BookmarkScreen");
               }}
-            />
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="settings-outline" color={color} size={size} />
-              )}
-              label="Settings"
-              onPress={() => {
-                props.navigation.navigate("SettingsScreen");
-              }}
-            />
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="account-check-outline" color={color} size={size} />
-              )}
-              label="Support"
-              onPress={() => {
-                props.navigation.navigate("SupportScreen");
-              }}
-            />
-          </Drawer.Section>
-          <Drawer.Section title="Preferences">
-            <TouchableRipple
-              onPress={() => {
-                toggleTheme();
-              }}
-            >
-              <View style={styles.preference}>
-                <Text>Dark Theme</Text>
-                <View pointerEvents="none">
-                  <Switch value={paperTheme.dark} />
-                </View>
-              </View>
-            </TouchableRipple>
+            /> */}
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>
