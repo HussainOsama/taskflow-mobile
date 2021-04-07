@@ -14,22 +14,26 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 const Drawer = createDrawerNavigator();
 
+import { DrawerContent } from "./components/DrawerContent";
+
 import {
   HomeStackScreen,
   CompeletedTaskStackScreen,
 } from "./screens/MainTapScreen";
+
+import MainTapScreen from "./screens/MainTapScreen";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeStackScreen} />
-        <Drawer.Screen
-          name="CompeletedTask"
-          component={CompeletedTaskStackScreen}
-        />
+      <Drawer.Navigator
+        initialRouteName="Home"
+        drawerContent={(props) => <DrawerContent {...props} />}
+      >
+        <Drawer.Screen name="Home" component={MainTapScreen} />
+        <Drawer.Screen name="CompeletedTask" component={MainTapScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
