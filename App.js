@@ -1,16 +1,28 @@
 import React from "react";
 import * as eva from "@eva-design/eva";
-import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
+import {
+  ApplicationProvider,
+  IconRegistry,
+  Layout,
+  Text,
+} from "@ui-kitten/components";
+
 import Signin from "./pages/Login";
 import Homepage from "./pages/Homepage";
+import Assign from "./pages/assignTask";
+import { EvaIconsPack } from "@ui-kitten/eva-icons";
 const HomeScreen = () => (
   <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
     {/* <Signin /> */}
-    <Homepage />
+    {/* <Homepage /> */}
+    <Assign />
   </Layout>
 );
 export default () => (
-  <ApplicationProvider {...eva} theme={eva.light}>
-    <HomeScreen />
-  </ApplicationProvider>
+  <>
+    <IconRegistry icons={EvaIconsPack} />
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <HomeScreen />
+    </ApplicationProvider>
+  </>
 );
